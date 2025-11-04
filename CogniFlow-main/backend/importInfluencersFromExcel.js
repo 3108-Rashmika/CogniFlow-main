@@ -8,7 +8,7 @@ async function importInfluencersFromExcel() {
 
   return new Promise((resolve, reject) => {
     try {
-      const workbook = XLSX.readFile('./zomato_influencers_updated_2025.xlsx');
+      const workbook = XLSX.readFile('./Updated_Influencers_2023_2025.xlsx');
       const sheetName = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[sheetName];
       const jsonData = XLSX.utils.sheet_to_json(worksheet);
@@ -28,7 +28,7 @@ async function importInfluencersFromExcel() {
             platform: row.platform || '',
             sample_post_url: row.sample_post_url || '',
             followers: row.followers || '',
-            engagement_estimate: row.engagement_estimate || '',
+            engagement_estimate: '', // Not present in new Excel
             contact: row.contact || '',
             status: row.status || '',
             source: row.source || '',

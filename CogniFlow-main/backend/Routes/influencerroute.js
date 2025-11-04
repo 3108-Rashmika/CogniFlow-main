@@ -61,7 +61,7 @@ router.post('/influencers/import-xlsx', async (req, res) => {
 });
 
 // POST import influencers from Excel (zomato_influencers_updated_2025.xlsx)
-router.post('/influencers/import-excel', async (req, res) => {
+router.post('/import-excel', async (req, res) => {
   try {
     console.log('Starting Excel import from zomato_influencers_updated_2025.xlsx...');
     const results = await importInfluencersFromExcel();
